@@ -28,7 +28,7 @@ int main() {
 	int x, y;
 	for (x = 0; x < width; x++) {
 		for (y = 0; y < height; y++) {
-			sprintf(buf, "%d %d %d ", x%256, x%256, y%256);
+			sprintf(buf, "%d %d %d ", (x*4)%256, (x*16)%256, (y*4)%256);
 			error(write(fd, buf, strlen(buf)));
 		}
 		error(write(fd, "\n", 1));
